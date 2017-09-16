@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="gb2312"?>
+<Class>
+   <student>
+     <name>张三</name>
+     <sex>男</sex>
+     <age>21</age>
+     <![CDATA[
+     <!--这里什么也没有-->
+     ]]>
+   </student>
+   <student>
+     <name>李四</name>
+     <sex>男</sex>
+     <age>21</age>
+     <![CDATA[
+     <!--这里什么也没有-->
+     ]]>
+   </student>
+   <student>
+     <name>王五</name>
+     <sex>男</sex>
+     <age>21</age>
+     <![CDATA[
+     <!--这里什么也没有-->
+     ]]>
+   </student>
+   <student>
+     <name>李六</name>
+     <sex>女</sex>
+     <age>21</age>
+     <![CDATA[
+     <!--这里什么也没有-->
+     ]]>
+   </student>
+   <student>
+     <name>沈七</name>
+     <sex>女</sex>
+     <age>21</age>
+     <![CDATA[
+     <!--这里什么也没有-->
+      ]]>
+   </student>
+
+</Class>
