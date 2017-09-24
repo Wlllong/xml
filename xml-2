@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE Library SYSTEM "library.dtd">
+<Library> 
+<Book BookId="z1">
+<Title>XML入门经典</Title>
+<Author>Joe Fawcett</Author>
+<Price>79.9</Price>
+<Publisher>清华大学出版社</Publisher>
+<Cost>98.0</Cost>
+</Book>
+<Member>
+<Name>
+<FirstName>Joe Fawcett</FirstName>
+<MiddleName>Liam R.E.Quin</MiddleName>
+<LastName>Danny Ayers</LastName>
+</Name>
+<Address>
+<HouseNumber>666</HouseNumber>
+<Street>明德路</Street>
+<City>北京</City>
+</Address>
+</Member>
+</Library>
