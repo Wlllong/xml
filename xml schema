@@ -15,12 +15,14 @@
 								</xs:restriction>
 							  </xs:simpleType>							
 							</xs:element>
-							<xs:element name="年龄"><xs:simpleType>
-								<xs:restriction base="xs:integer">
+							<xs:element name="年龄">
+							  <xs:simpleType>
+							     <xs:restriction base="xs:integer">
 								<xs:minExclusive value="10"/>
 								<xs:maxExclusive value="120"/>
-								</xs:restriction>
-							</xs:simpleType></xs:element>
+							     </xs:restriction>
+							  </xs:simpleType>
+						        </xs:element>
 						</xs:sequence>
 						<xs:attribute name="学号" type="xs:integer" use="required"/>
 					</xs:complexType>
