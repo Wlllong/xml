@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="GB2312"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="学生名册">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="学生" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="姓名" type="xs:string"/>
+							<xs:element name="性别">
+							  <xs:simpleType>
+								<xs:restriction base="xs:string">
+								  <xs:enumeration value="男"/>
+								  <xs:enumeration value="女"/>
+								</xs:restriction>
+							  </xs:simpleType>							
+							</xs:element>
+							<xs:element name="年龄"><xs:simpleType>
+								<xs:restriction base="xs:integer">
+								<xs:minExclusive value="10"/>
+								<xs:maxExclusive value="120"/>
+								</xs:restriction>
+							</xs:simpleType></xs:element>
+						</xs:sequence>
+						<xs:attribute name="学号" type="xs:integer" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
