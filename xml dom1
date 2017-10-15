@@ -1,0 +1,70 @@
+//用DOM生成一个xml
+import java.io.File;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+public class DomCreat {
+
+	public static void main(String [] args)
+	{
+		File a=new File("C:\\Users\\theshadowdragon\\Desktop\\Team.xml");
+		createXMLByDom(a);
+	}
+	public static  void createXMLByDom(File dest) {
+		// TODO Auto-generated method stub
+		DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
+		
+		DocumentBuilder builder;
+		try {
+			builder = factory.newDocumentBuilder();
+		
+		Document document=builder.newDocument();
+		Element team=document.createElement("Team");
+		Element TeamMember=document.createElement("TeamMember");
+		Element Empno=document.createElement("Empno");
+		Empno.setAttribute("value", "30772");
+		TeamMember.appendChild(Empno);
+		Element Name=document.createElement("Name");
+		Name.setAttribute("value", "Manjeet Singh");
+		TeamMember.appendChild(Name);
+		Element Designation=document.createElement("Designation");
+		Designation.setAttribute("value", "Team Leader");
+		TeamMember.appendChild(Designation);
+		team.appendChild(TeamMember);
+		document.appendChild(team);
+		
+		TransformerFactory tff=TransformerFactory.newInstance();
+		Transformer tf;
+
+			tf = tff.newTransformer();
+		 
+		tf.setOutputProperty(OutputKeys.INDENT, "yes");
+
+			tf.transform(new DOMSource(document), new StreamResult(dest));
+		}  catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (TransformerConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}catch (TransformerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		
+	}
+
+}
