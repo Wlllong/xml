@@ -1,0 +1,42 @@
+import java.io.File;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+public class DomTeST {
+
+	public static void main(String[] args) throws Exception
+	{
+		// TODO Auto-generated method stub
+		DocumentBuilderFactory dbf=DocumentBuilderFactory.newInstance();
+		DocumentBuilder db=dbf.newDocumentBuilder();
+		Document document=db.parse(new File("5.4.xml"));
+		
+		String version=document.getXmlVersion();
+		System.out.println("<?xml version=\""+version+"\"?");
+		NodeList list=document.getElementsByTagName("Root");
+		System.out.println("<"+document.getDocumentElement().getTagName()+">");
+		for(int i=0;i<list.getLength();++i)
+		{
+			Element element=(Element)list.item(i);
+			String content=element.getElementsByTagName("First").item(0).getFirstChild().getNodeValue();
+			System.out.println("<First>"+content+"</First>");
+			content=element.getElementsByTagName("Second").item(0).getFirstChild().getNodeValue();
+			System.out.println("<Second>"+content+"</Second>");
+		}
+		System.out.println("</"+document.getDocumentElement().getTagName()+">");
+		
+
+	}
+
+}
+/*
+//xml文档
+<?xml version="1.0"?>
+<!DOCTYPE Root[<!ENTITY First "<First>DOM</First>">]>
+<Root>
+   &First;
+<Second>SAX</Second>
+</Root>
+*/
